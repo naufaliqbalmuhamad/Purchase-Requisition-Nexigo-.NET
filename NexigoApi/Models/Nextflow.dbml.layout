@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Nextflow">
+  <DataContextMoniker Name="/NextflowDataContext" />
+  <nestedChildShapes>
+    <classShape Id="6a5356a2-ccb5-4cfd-88ff-bba7e20b4282" absoluteBounds="0.75, 0.75, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/NextflowDataContext/TableLeave" />
+      <nestedChildShapes>
+        <elementListCompartment Id="57a746ee-b24a-4366-9c4c-ba7ecca31cac" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a240687a-9673-4799-a0fe-b27407acb706" absoluteBounds="3.75, 0.75, 2, 1.9631982421875">
+      <DataClassMoniker Name="/NextflowDataContext/UserId" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b05b924a-1a20-4fb5-9b24-99d8d8add8e9" absoluteBounds="3.765, 1.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
