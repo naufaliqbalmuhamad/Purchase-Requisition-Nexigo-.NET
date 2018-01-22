@@ -1,5 +1,5 @@
 ﻿nexigo.widget({
-    text: 'PURCHASE REQUEST',
+    text: 'HISTORY',
     toolbars: [],
     views: [
         {
@@ -15,14 +15,21 @@
                     text: 'Table',
                     name: 'gridCustomer',
                     onDblClick: 'doubleClick',
+                    sourceOptions: {
+                        pageSize: 10
+                    },
                     options: {
-                        sortable: false,
-                        editable: false,
-                        filterable: true,
-                        //pageable: true,
-                        selectable: 'single',
+                        pageable: true,
+                        sortable: true,
+                        selectionMode: 'singlerow',
+                        autoheight: true,
                     },
                     fields: [
+                        {
+                            name: 'Id',
+                            text: 'Request Id',
+                            type: 'text',
+                        },
                         {
                             name: 'Name',
                             text: 'Requester',
@@ -40,12 +47,12 @@
                         },
                         {
                             name: 'Qty',
-                            text: 'Qty',
+                            text: 'Quantity',
                             type: 'text',
                         },
                         {
                             name: 'QtySatuan',
-                            text: 'Satuan',
+                            text: 'Unit',
                             type: 'text',
                         },
                         {
@@ -79,12 +86,6 @@
         }],
     functions: {
         init: function (xg, callback) {
-            var filter = {
-                field: 'Owner',
-                operator: 'eq',
-                value: 'Finished'
-            };
-            xg.grid.instance('gridCustomer').dataSource.filter(filter);
             $('.menu').removeClass('hide');
             callback();
         }

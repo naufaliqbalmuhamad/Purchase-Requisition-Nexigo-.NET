@@ -1,158 +1,16 @@
 ﻿var db = {
     menu: [
         {
-            text: "Example",
+            text: "Home",
             icon: "fa-home",
-            link: "makers/example"
+            link: "makers/login"
         },
         {
-          text: 'BIODATA',
-          icon: 'fa-home',
-          link: 'home/makersCRUD'
-        },
-        {
-            text: 'Blank',
-            icon: 'fa-file-o',
-            link: 'home/Blank'
-        },
-        {
-          text: 'Layout',
-          icon: 'fa-columns',
-          menus: [
-              {
-                link: 'demo/panel',
-                text: 'Panel'
-              }
-          ]
-        }, 
-        {
-          text: 'Text',
-          icon: 'fa-edit',
-          menus: [
-              {
-                link: 'demo/text',
-                text: 'Text Input'
-              }, {
-                link: 'demo/email',
-                text: 'Text Email'
-              }, {
-                link: 'demo/password',
-                text: 'Text Password'
-              }, {
-                link: 'demo/textarea',
-                text: 'Text Area'
-              }, {
-                link: 'demo/numeric',
-                text: 'Text Numeric'
-              }, {
-                link: 'demo/tooltip',
-                text: 'Text Tooltip and Info'
-              }
-          ]
-        }, {
-          text: 'Picker',
-          icon: 'fa-calendar',
-          menus: [
-              {
-                link: 'demo/datepicker',
-                text: 'Datepicker'
-              }
-          ]
-        }, {
-          text: 'Check & Radio',
-          icon: 'fa-check',
-          menus: [
-              {
-                link: 'demo/checkbox',
-                text: 'Checkbox'
-              }, {
-                link: 'demo/radio',
-                text: 'Radio'
-              }
-          ]
-        }, {
-          text: 'Collection',
-          icon: 'fa-list',
-          menus: [
-              {
-                link: 'demo/select',
-                text: 'Select'
-              }, {
-                link: 'demo/list',
-                text: 'List'
-              }, {
-                link: 'demo/autocomplete',
-                text: 'Auto Complete'
-              }
-          ]
-        }, {
-          text: 'Grid',
-          icon: 'fa-table',
-          menus: [
-              {
-                link: 'demo/grid/grid_basic',
-                text: 'Basic'
-              },
-              {
-                link: 'demo/grid/table',
-                text: 'Table'
-              }
-          ]
-        }, {
-          text: 'Tools',
-          icon: 'fa-wrench',
-          menus: [
-              {
-                link: 'demo/popup',
-                text: 'Modal popup'
-              }, {
-                link: 'demo/dialog',
-                text: 'Message Dialog'
-              }, {
-                link: 'demo/content',
-                text: 'Hide Show Content'
-              }, {
-                link: 'demo/tab',
-                text: 'Tab'
-              }, {
-                link: 'demo/toolbar',
-                text: 'Toolbar',
-              },
-              {
-                link: 'demo/file',
-                text: 'File Upload',
-              }, {
-                link: 'demo/approvalflow',
-                text: 'Approval Flow',
-              }
-          ]
-        }, {
-          text: 'Labs',
-          icon: 'fa-edit',
-          menus: [
-              {
-                link: 'demo/labs/lab1',
-                text: 'Lab 01'
-              }, {
-                link: 'demo/labs/lab2',
-                text: 'Lab 02'
-              }, {
-                link: 'demo/labs/lab3',
-                text: 'Lab 03'
-              }, {
-                link: 'demo/labs/lab4',
-                text: 'Lab 04'
-              }
-          ]
+          text: 'History',
+          icon: 'fa-history',
+          link: 'makers/history'
         }
-        //{
-        //    link: 'showcode',
-        //    hidelink: true,
-        //    text: 'Show Code',
-        //    clas: 'right',
-        //    icon: 'fa-code'
-        //}
-  ]
+    ],
 };
 
 

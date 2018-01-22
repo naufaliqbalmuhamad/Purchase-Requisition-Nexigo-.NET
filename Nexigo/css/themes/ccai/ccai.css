@@ -1,3 +1,4 @@
+
 ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
@@ -32,7 +33,7 @@ body {
 .sg-header,
 .sg-header-menu {
     color: #fff;
-    background-color: #16266b /*#990012*/
+    background-color: black /*#16266b*/ /*#990012*/
 }
 
 #side-logo {
@@ -162,7 +163,7 @@ body {
         font-size: 20px;
         margin-bottom: 20px;
         border-bottom: none;
-        background-color: #0047AB /*#9b111e*/;
+        background-color: gray /*#0047AB*/ /*#9b111e*/;
         color: #fff;
         font-weight: 700;
         text-align: center;
@@ -518,7 +519,7 @@ body {
 
             .custom-table table.xg-table tr td .bootstrap-datetimepicker-widget table td.active,
             .custom-table table.xg-table tr td .bootstrap-datetimepicker-widget table td.active:hover {
-                background-color: #337ab7 !important;
+                background-color: black !important;
                 color: #fff;
                 text-shadow: 0 -1px 0 rgba(0, 0, 0, .25)
             }
@@ -718,6 +719,11 @@ body {
             background-color: #D7D7D7
         }
 
+.k-state-selected.active {
+    background-color: black;
+    color: white;
+}
+
 .apvflow-legend {
     text-align: center;
     margin-top: 10px
@@ -735,3 +741,109 @@ body {
             .apvflow-legend > ul > li i {
                 float: none !important
             }
+
+.k-header.k-scheduler-footer .k-header,
+.k-header.k-scheduler-footer ul.k-header li .k-link {
+    color: #f7d9f7 /*#00b0ff*/;
+    background-color: #fafafa
+}
+
+.k-gantt .k-treelist .k-alt.k-state-selected,
+.k-gantt .k-treelist .k-alt.k-state-selected > td,
+.k-gantt .k-treelist .k-state-selected,
+.k-gantt .k-treelist .k-state-selected td,
+.k-grid td.k-state-selected,
+.k-grid td.k-state-selected.k-state-focused,
+.k-grid tr.k-state-selected,
+.k-listview > .k-state-selected,
+.k-marquee-color,
+.k-scheduler .k-today.k-state-selected,
+.k-scheduler-layout .k-state-selected,
+.k-state-selected.k-line {
+    background-color: #f7d9f7 /*#00b0ff*/
+}
+
+.k-state-selected.k-line {
+    color: #f7d9f7 /*#00b0ff*/
+}
+
+.k-treelist .k-alt.k-state-selected,
+.k-treelist .k-alt.k-state-selected > td,
+.k-treelist .k-state-selected,
+.k-treelist .k-state-selected td {
+    background-color: #f7d9f7 /*#00b0ff*/;
+    border-color: #f7d9f7
+}
+
+.k-chart .k-handle:hover {
+    background-color: #eedddd /*#00b0ff*/;
+    border-color: #f7d9f7 /*#00b0ff*/
+}
+
+.k-spreadsheet-filter.k-state-active {
+    color: #3f51b5;
+    background-color: #f7d9f7 /*#00b0ff*/
+}
+
+.k-spreadsheet-popup .k-state-active {
+    background-color: #f7d9f7 /*#00b0ff*/;
+    color: #fff
+}
+
+.ktb-var-selected-background {
+    color: #f7d9f7
+}
+
+.k-calendar td.k-state-selected {
+    background-color: #f7d9f7 /*#00b0ff*/;
+    -webkit-box-shadow: none;
+    box-shadow: none
+}
+
+.k-panelbar .k-tabstrip-items .k-state-active,
+.k-tabstrip-items .k-state-active {
+    background-color: #3f51b5;
+    background-image: none;
+    border-color: #f7d9f7 /*#00b0ff*/
+}
+
+.k-gantt .k-gantt-toolbar .k-gantt-views li.k-state-selected.k-state-hover,
+.k-gantt-toolbar > .k-gantt-views > li.k-state-selected,
+.k-scheduler .k-scheduler-toolbar .k-scheduler-views li.k-state-selected.k-state-hover,
+.k-scheduler-toolbar > .k-scheduler-views > li.k-state-selected {
+    border-bottom-color: #f7d9f7 /*#00b0ff*/;
+    background-color: black
+}
+
+.k-gantt .k-treelist .k-alt.k-state-selected,
+.k-gantt .k-treelist .k-alt.k-state-selected > td,
+.k-gantt .k-treelist .k-state-selected,
+.k-gantt .k-treelist .k-state-selected td,
+.k-grid td.k-state-selected,
+.k-grid td.k-state-selected.k-state-focused,
+.k-grid tr.k-state-selected,
+.k-listview > .k-state-selected,
+.k-marquee-color,
+.k-scheduler .k-today.k-state-selected,
+.k-scheduler-layout .k-state-selected,
+.k-state-selected.k-line {
+    background-color: #d3d3d3 /*#00b0ff*/
+}
+
+.k-state-selected.k-line {
+    color: black /*#00b0ff*/
+}
+
+.k-gantt .k-treelist .k-alt.k-state-selected:hover,
+.k-gantt .k-treelist .k-alt.k-state-selected:hover td {
+    background-color: #dcdcdc
+}
+
+.k-calendar td.k-state-selected.k-state-hover {
+    background-color: #dcdcdc
+}
+
+.k-grid td.k-state-selected:hover,
+.k-grid tr.k-state-selected:hover td {
+    background-color: #dcdcdc
+}

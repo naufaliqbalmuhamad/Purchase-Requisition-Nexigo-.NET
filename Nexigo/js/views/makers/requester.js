@@ -1,5 +1,5 @@
 ﻿nexigo.widget({
-    text: 'PURCHASE REQUEST',
+    text: 'REQUESTER',
     toolbars: [
     ],
     views: [{
@@ -17,7 +17,7 @@
                 //inputKey: '[0-9]',
                 readonly: true,
                 cols: 6
-            },{
+            }, {
                 name: 'Name',
                 text: 'Requester Name',
                 readonly: true,
@@ -41,9 +41,8 @@
                 },
                 cols: 6,
             }, {
-                name: 'BPM-Id',
-                text: 'BPM Process ID',
-                placeholder: 'N/A',
+                name: 'Id',
+                text: 'Requester Id',
                 readonly: true,
                 cols: 6
             }]
@@ -79,7 +78,7 @@
                     method: 'POST'
                 },
                 type: 'select',
-                cols: 3,
+                cols: 4,
             }, {
                 name: 'BudgetSource',
                 text: 'Budget Source',
@@ -90,7 +89,7 @@
                     method: 'POST'
                 },
                 cols: 4,
-                offset: 3,
+                offset: 2,
             },
             {
                 name: 'Currency',
@@ -146,7 +145,7 @@
                 placeholder: '--- Write Here---',
                 text: 'Item Text',
                 type: 'text',
-                cols: 7,
+                cols: 6,
             }]
         }, {
             type: 'fieldRow',
@@ -168,7 +167,8 @@
                 name: 'Description',
                 text: 'Description',
                 placeholder: '--- Write Here ---',
-                cols: 10,
+                type: 'textarea',
+                cols: 12,
             }]
         },
         {
@@ -203,14 +203,14 @@
         {
             type: 'fieldRow',
             offset: 8,
-            fields: [        {
-            name: 'ApproveStatus',
-            text: 'Status',
-            readonly: true,
-            offset: 8,
-            type: 'text',
-            cols: 4,
-                }
+            fields: [{
+                name: 'ApproveStatus',
+                text: 'Status',
+                readonly: true,
+                offset: 8,
+                type: 'text',
+                cols: 4,
+            }
             ]
         },
         {
@@ -219,51 +219,29 @@
             name: 'gridCustomer',
             onDblClick: 'doubleClick',
             options: {
-                sortable: false,
+                sortable: true,
                 editable: false,
-                filterable: true,
-                //pageable: true,
                 selectable: 'single',
             },
             fields: [
+                {
+                    name: 'Id',
+                    text: 'Request Id',
+                    type: 'text',
+                },
                 {
                     name: 'Name',
                     text: 'Requester',
                     type: 'text',
                 },
                 {
-                    name: 'ItemText',
-                    text: 'Item Detail',
-                    type: 'text',
-                },
-                {
-                    name: 'EstPrice',
-                    text: 'Est. Price',
-                    type: 'text',
-                },
-                {
-                    name: 'Qty',
-                    text: 'Qty',
-                    type: 'text',
-                },
-                {
-                    name: 'QtySatuan',
-                    text: 'Satuan',
-                    type: 'text',
-                },
-                {
-                    name: 'MaterialGroup',
-                    text: 'Material Group',
-                    type: 'text',
-                },
-                {
-                    name: 'Subtotal',
-                    text: 'Sub Total',
-                    type: 'text',
-                },
-                {
                     name: 'ApproveStatus',
                     text: 'Approve Status',
+                    type: 'text',
+                },
+                {
+                    name: 'Comment',
+                    text: 'Comment',
                     type: 'text',
                 },
                 {
@@ -288,10 +266,10 @@
         }, {
             type: 'fieldRow',
             fields: [
-                { type: 'button', text: 'Submit', stretch: true, cols: 12, action: 'submit', name: 'Submit'},
-                { type: 'button', text: 'Update', stretch: true, cols: 12, action: 'update', name: 'Update', hide: true },
-                { type: 'button', text: 'Delete', stretch: true, cols: 12, action: 'delete', name: 'Delete', hide: true },
-                { type: 'button', text: 'Create', stretch: true, cols: 12, action: 'create', name: 'Create', hide: true },
+                { type: 'button', icon: 'fa-save', text: 'Submit', stretch: true, cols: 12, action: 'submit', name: 'Submit', cssClass: 'xg-btn-success' },
+                { type: 'button', icon: 'fa-pencil-square-o', text: 'Edit', stretch: true, cols: 12, action: 'Edit', name: 'Edit', cssClass: 'xg-btn-danger', hide: true },
+                { type: 'button', icon: 'fa-trash-o', text: 'Delete', stretch: true, cols: 12, action: 'delete', name: 'Delete', cssClass: 'xg-btn-danger', hide: true },
+                { type: 'button', icon: 'fa-plus', text: 'Create', stretch: true, cols: 12, action: 'create', name: 'Create', cssClass: 'xg-btn-info', hide: true },
             ]
         }],
     }],
@@ -355,6 +333,7 @@
                 },
                 complete: function () {
                     console.log("complete");
+                    alert("Request success");
                     xg.loading.hide();
 
                 }
@@ -366,32 +345,33 @@
             $('[xg-field="Create"]').addClass('hide');
             $('[xg-field="Update"]').addClass('hide');
             $('[xg-field="Delete"]').addClass('hide');
-            xg.populate({ ApproveStatus: null });        
+            xg.populate({ ApproveStatus: null });
         },
 
         doubleClick: function (fieldRow) {
             //xg.loading.show();
             window.ProcessId = fieldRow.ProcessId;
+            window.TaskId = fieldRow.TaskId;
             xg.populate(fieldRow);
             if (xg.serialize().ApproveStatus === "Approved") {
                 $('[xg-field="Submit"]').addClass('hide');
-                $('[xg-field="Update"]').addClass('hide');
+                $('[xg-field="Edit"]').addClass('hide');
                 $('[xg-field="Delete"]').addClass('hide');
                 $('[xg-field="Create"]').removeClass('hide');
             } else if (xg.serialize().ApproveStatus === "Edit") {
                 $('[xg-field="Submit"]').addClass('hide');
                 $('[xg-field="Delete"]').addClass('hide');
-                $('[xg-field="Update"]').removeClass('hide');
+                $('[xg-field="Edit"]').removeClass('hide');
                 $('[xg-field="Create"]').removeClass('hide');
             } else if (xg.serialize().ApproveStatus === "Disapproved") {
                 $('[xg-field="Submit"]').addClass('hide');
-                $('[xg-field="Update"]').addClass('hide');
+                $('[xg-field="Edit"]').addClass('hide');
                 $('[xg-field="Delete"]').removeClass('hide');
                 $('[xg-field="Create"]').removeClass('hide');
             } else {
                 $('[xg-field="Submit"]').addClass('hide');
-                $('[xg-field="Update"]').removeClass('hide');
-                $('[xg-field="Delete"]').removeClass('hide');
+                $('[xg-field="Edit"]').removeClass('hide');
+                $('[xg-field="Delete"]').addClass('hide');
                 $('[xg-field="Create"]').removeClass('hide');
             }
             console.log(fieldRow);
@@ -402,7 +382,7 @@
             var req = xg.serialize();
             req.Action = "Edit";
             req.Email = window.Email;
-            req.TaskId = value;
+            req.TaskId = window.TaskId;
             req.ProcessId = window.ProcessId;
             xg.ajax({
                 url: 'http://localhost:31602/api/Request/updateData',
@@ -416,7 +396,7 @@
                 complete: function () {
                     console.log("complete");
                     xg.loading.hide();
-                    xg.navigate("makers/login");
+                    alert("Edit success");
                 }
             });
         },
@@ -424,7 +404,7 @@
         delete: function () {
             //var req = xg.serialize();
             //var Id = req.Name;
-            var Id = xg.grid.getSelectedRow('gridCustomer')[0].Id; 
+            var Id = xg.grid.getSelectedRow('gridCustomer')[0].Id;
             xg.ajax({
                 url: 'http://localhost:31602/api/Request/deleteData?Id=' + Id,
                 type: 'POST',

@@ -38,6 +38,7 @@ namespace NexigoApi.Controllers
         public string TaskId { get; set; }
         public string ProcessId { get; set; }
         public string RecordId { get; set; }
+        public string Comment { get; set; }
     }
 
     [EnableCors(origins: "*", headers: "*", methods: "*")]
@@ -81,11 +82,10 @@ namespace NexigoApi.Controllers
                             string email = item.created_by.email;
                             task.ProcessId = item.process_id;
                             task.TaskId = item.id;
-                            string pid = item.process_id;
                             var dd = context.RequesterSummaries.Where(o => o.ProcessId == task.ProcessId).FirstOrDefault();
                             task.Payroll = dd.Payroll;
                             task.Id = dd.Id;
-                            task.RequesterPosition = context.RequesterSummaries.Where(o => o.ProcessId == pid).FirstOrDefault().RequesterPosition;
+                            task.RequesterPosition = dd.RequesterPosition;
                             task.AsalCompany = dd.AsalCompany;
                             task.Location = dd.Location;
                             task.Plant = dd.Plant;
@@ -104,6 +104,7 @@ namespace NexigoApi.Controllers
                             task.Manager = dd.Manager;
                             task.Owner = dd.Owner;
                             task.Name = dd.Name;
+                            task.Comment = dd.Comment;
                             task.RecordId = dd.RecordId;
                             task.Payroll = dd.Payroll;
                             task.RequesterPosition = dd.RequesterPosition;
@@ -139,7 +140,7 @@ namespace NexigoApi.Controllers
                                                 " \"pvManager\": \"arya@makers.com\"," +
                                                 " \"pvReq\": \"" + param.Email + "\"" +
                                             "}," +
-                                            "\"comment\": \"Tes\"" +
+                                            "\"comment\": \"Approved\"" +
                                         "}" +
                                     "}";
 
@@ -161,6 +162,7 @@ namespace NexigoApi.Controllers
                     {
                         var requester = context.RequesterSummaries.Where(o => o.ProcessId == param.ProcessId).FirstOrDefault();
                         requester.ApproveStatus = param.Action;
+                        requester.Comment = param.Comment;
                         context.SubmitChanges();
 
                         CommentHistory commentHistory = new CommentHistory();
@@ -201,7 +203,7 @@ namespace NexigoApi.Controllers
                                                 "\"pvAction\" : \"" + param.Action + "\"," +
                                             //" \"pvApprover\": \"arya@makers.com\"" +
                                             "}," +
-                                            "\"comment\": \"Tes\"" +
+                                            "\"comment\": \"Disapproved\"" +
                                         "}" +
                                     "}";
 
@@ -223,6 +225,7 @@ namespace NexigoApi.Controllers
                     {
                         var requester = context.RequesterSummaries.Where(o => o.ProcessId == param.ProcessId).FirstOrDefault();
                         requester.ApproveStatus = param.Action;
+                        requester.Comment = param.Comment;
                         context.SubmitChanges();
 
                         CommentHistory commentHistory = new CommentHistory();
@@ -263,7 +266,7 @@ namespace NexigoApi.Controllers
                                                     " \"pvEditor\": \"mosa@makers.com\"," +
                                                 "\"pvReq\" : \"" + param.Email + "\"," +
                                             "}," +
-                                            "\"comment\": \"Tes\"" +
+                                            "\"comment\": \"Edited\"" +
                                         "}" +
                                     "}";
 
@@ -285,6 +288,7 @@ namespace NexigoApi.Controllers
                     {
                         var requester = context.RequesterSummaries.Where(o => o.ProcessId == param.ProcessId).FirstOrDefault();
                         requester.ApproveStatus = param.Action;
+                        requester.Comment = param.Comment;
                         context.SubmitChanges();
 
                         CommentHistory commentHistory = new CommentHistory();

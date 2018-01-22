@@ -299,6 +299,7 @@ namespace NexigoApi.Controllers
                 requester.RecordId = RecordId;
 
                 dc.RequesterSummaries.InsertOnSubmit(requester);
+                dc.SubmitChanges();
 
                 comment.Name = req.Name;
                 comment.ProcessId = ProcessId;
@@ -313,7 +314,7 @@ namespace NexigoApi.Controllers
         }
 
         [HttpPost]
-        public Read readAll()
+        public Read readAll() 
         {
             var query = from Baca in context.RequesterSummaries
                         select new Result

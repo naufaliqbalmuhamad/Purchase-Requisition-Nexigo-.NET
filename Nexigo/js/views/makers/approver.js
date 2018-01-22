@@ -1,5 +1,5 @@
 ﻿nexigo.widget({
-    text: 'PURCHASE REQUEST',
+    text: 'SCM APPROVER',
     toolbars: [
     ],
     views: [
@@ -7,7 +7,7 @@
             type: 'panel',
             inline: true,
             name: 'SinglePanel',
-            text: 'REQUESTER SUMMARY',
+            text: 'REQUEST SUMMARY',
             collapsible: true,
             offset: 1,
             fields: [
@@ -17,56 +17,25 @@
                     name: 'gridCustomer',
                     onDblClick: 'doubleClick',
                     options: {
-                        sortable: false,
-                        editable: false,
-                        filterable: true,
-                        //pageable: true,
+                        sortable: true,
+                        selectionMode: 'singlerow',
                         selectable: 'single',
+                        autoheight: true,
                     },
                     fields: [
+                        {
+                            name: 'Id',
+                            text: 'Request Id',
+                            type: 'text',
+                        },
                         {
                             name: 'Name',
                             text: 'Requester',
                             type: 'text',
                         },
-                        {
-                            name: 'ItemText',
-                            text: 'Item Detail',
-                            type: 'text',
-                        },
-                        {
-                            name: 'EstPrice',
-                            text: 'Est. Price',
-                            type: 'text',
-                        },
-                        {
-                            name: 'Qty',
-                            text: 'Qty',
-                            type: 'text',
-                        },
-                        {
-                            name: 'QtySatuan',
-                            text: 'Satuan',
-                            type: 'text',
-                        },
-                        {
-                            name: 'MaterialGroup',
-                            text: 'Material Group',
-                            type: 'text',
-                        },
-                        {
-                            name: 'Subtotal',
-                            text: 'Sub Total',
-                            type: 'text',
-                        },
-                        //{
-                        //    name: 'ApproveStatus',
-                        //    text: 'Approve Status',
-                        //    type: 'text',
-                        //},
                         //{
                         //    name: 'Manager',
-                        //    text: 'Manager Status',
+                        //    text: 'Manager Approval',
                         //    type: 'text',
                         //},
                         {
@@ -120,30 +89,25 @@
                     fields: [{
                         name: 'Id',
                         text: 'Request Id',
-                        //inputKey: '[0-9]',
                         readonly: true,
                         cols: 6
-                    },{
+                    }, {
                         name: 'Name',
                         text: 'Requester Name',
-                        //inputKey: '[a-z]',
                         readonly: true,
                         cols: 6
-                    },{
+                    }, {
                         name: 'Payroll',
                         text: 'Payroll Number',
-                        //inputKey: '[0-9]',
                         readonly: true,
-                        cols: 4
+                        cols: 6
                     }]
                 }, {
                     type: 'fieldRow',
                     fields: [{
                         name: 'RequesterPosition',
                         text: 'Requester Position',
-                        placeholder: "-- select --",
                         readonly: true,
-                        //type: 'select',
                         data: {
                             url: 'http://localhost:31602/api/Request/readPosition',
                             method: 'POST'
@@ -162,9 +126,7 @@
                     fields: [{
                         name: 'AsalCompany',
                         text: 'Company',
-                        placeholder: "-- select --",
                         readonly: true,
-                        //type: 'select',
                         data: {
                             url: 'http://localhost:31602/api/Request/readCompany',
                             method: 'POST'
@@ -184,33 +146,26 @@
                     fields: [{
                         name: 'Plant',
                         text: 'Plant',
-                        placeholder: "-- select --",
                         readonly: true,
                         data: {
                             url: 'http://localhost:31602/api/Request/readPlant',
                             method: 'POST'
                         },
-                        //type: 'select',
                         cols: 6,
                     }, {
                         name: 'BudgetSource',
                         text: 'Budget Source',
-                        placeholder: "-- select --",
                         readonly: true,
-                        //type: 'select',
                         data: {
                             url: 'http://localhost:31602/api/Request/readBudget',
                             method: 'POST'
                         },
-                        cols: 4,
-                        offset: 3,
+                        cols: 5,
                     },
                     {
                         name: 'Currency',
                         text: 'Currency',
-                        //type: 'select',
                         readonly: true,
-                        //inputKey: '[0-9]',
                         data: {
                             url: 'http://localhost:31602/api/Request/readCurrency',
                             method: 'POST',
@@ -223,7 +178,6 @@
                             name: 'Date',
                             text: 'Expected Date',
                             type: 'picker',
-                            placeholder: '--- Pick A Date ---',
                             readonly: true,
                             required: true,
                             cols: 6
@@ -238,7 +192,6 @@
             name: 'SinglePanel',
             text: 'HEADER INFORMATION',
             collapsible: true,
-            placeholder: '--- Write Here ---',
             offset: 1,
             fields: [{
                 type: 'fieldRow',
@@ -249,7 +202,8 @@
                     type: 'textarea',
                 }],
             }],
-        }, {
+        },
+        {
             type: 'panel',
             inline: true,
             name: 'SinglePanel',
@@ -260,18 +214,16 @@
                 type: 'fieldRow',
                 fields: [{
                     name: 'ItemText',
-                    placeholder: '--- Write Here---',
                     readonly: true,
                     text: 'Item Text',
                     type: 'text',
-                    cols: 7,
+                    cols: 6,
                 }]
             }, {
                 type: 'fieldRow',
                 fields: [{
                     name: 'MaterialGroup',
                     text: 'Material Group',
-                    placeholder: "-- select --",
                     readonly: true,
                     data: {
                         url: 'http://localhost:31602/api/Request/readMaterial',
@@ -286,9 +238,8 @@
                 fields: [{
                     name: 'Description',
                     text: 'Description',
-                    placeholder: '--- Write Here ---',
+                    type: 'textarea',
                     readonly: true,
-                    cols: 10,
                 }]
             },
             {
@@ -296,14 +247,12 @@
                 fields: [{
                     name: 'Qty',
                     text: 'Quantity',
-                    placeholder: '--- Qty ---',
                     readonly: true,
                     type: 'text',
                     cols: 3,
                 }, {
                     name: 'QtySatuan',
                     //type: 'select',
-                    placeholder: "-- select --",
                     readonly: true,
                     data: {
                         url: 'http://localhost:31602/api/Request/readQuantity',
@@ -318,18 +267,44 @@
                     name: 'EstPrice',
                     text: 'Estimated Price',
                     readonly: true,
-                    placeholder: "0",
                     type: 'text',
                     cols: 3,
-                }],
-            }, 
-            {
+                }]
+            },
+            ]
+        },
+        {
+            type: 'panel',
+            inline: true,
+            name: 'SinglePanel',
+            text: 'APPROVER COMMENT',
+            collapsible: true,
+            offset: 1,
+            fields: [{
                 type: 'fieldRow',
-                fields: [
-                    { type: 'button', text: 'Submit', stretch: true, cols: 12, action: 'submit', name: 'Submit' }
-                ]
+                fields: [{
+                    name: 'Comment',
+                    type: 'textarea',
+                    cols: 12
+                }],
             }],
-        }],
+        },
+        {
+            type: 'panel',
+            inline: true,
+            offset: 5,
+            fields: [
+                {
+                    type: 'buttons',
+                    buttons: [
+                        { text: 'Approve', icon: 'fa-check', stretch: true, cols: 3, action: 'Approved', name: 'Approve', cssClass: 'xg-btn-success' },
+                        { text: 'Disapprove', icon: 'fa-close', stretch: true, cols: 3, cssClass: 'xg-btn-danger', name: 'Disapprove', action: 'Disapproved' },
+                        { text: 'Edit', icon: 'fa-pencil-square-o', stretch: true, cols: 3, cssClass: 'xg-btn-info', name: 'Edit', action: 'Edit' },
+                    ]
+                },
+            ]
+        },
+    ],
     functions: {
         init: function (xg, callback) {
             //var filter = {
@@ -338,7 +313,6 @@
             //    value: 'Edit'
             //};
             //xg.grid.instance('gridCustomer').dataSource.filter(filter)
-            alert('Double Click to Show the Data');
             $('.menu').removeClass('hide');
             if (window.Jabatan !== "Approver") {
                 xg.navigate('makers/login');
@@ -363,14 +337,15 @@
         },
 
         doubleClick: function (fieldRow) {
-            if (xg.grid.getSelectedRow('gridCustomer')[0].Manager === "Read") {
-                $('[xg-field="ApproveStatus"]').addClass('hide');
-                $('[xg-field="Update"]').addClass('hide');
-            } else {
-                $('[xg-field="ApproveStatus"]').removeClass('hide');
-                $('[xg-field="Update"]').removeClass('hide');
-            }
+            //if (xg.grid.getSelectedRow('gridCustomer')[0].Manager === "Read") {
+            //    $('[xg-field="ApproveStatus"]').addClass('hide');
+            //    $('[xg-field="Update"]').addClass('hide');
+            //} else {
+            //    $('[xg-field="ApproveStatus"]').removeClass('hide');
+            //    $('[xg-field="Update"]').removeClass('hide');
+            //}
             window.ProcessId = fieldRow.ProcessId;
+            window.TaskId = fieldRow.TaskId;
             xg.populate(fieldRow);
             console.log(fieldRow);
         },
@@ -399,7 +374,8 @@
             var req = xg.serialize();
             req.Action = "Approved";
             req.Email = window.Email;
-            req.TaskId = value;
+            //req.TaskId = value;
+            req.TaskId = window.TaskId;
             req.ProcessId = window.ProcessId;
             xg.ajax({
                 url: 'http://localhost:31602/api/Approver/SubmitTaskApprove',
@@ -413,7 +389,7 @@
                 complete: function () {
                     console.log("complete");
                     xg.loading.hide();
-                    xg.navigate("makers/login");
+                    alert("Approved");
                 }
             });
         },
@@ -423,7 +399,8 @@
             var req = xg.serialize();
             req.Action = "Disapproved";
             req.Email = window.Email;
-            req.TaskId = value;
+            //req.TaskId = value;
+            req.TaskId = window.TaskId;
             req.ProcessId = window.ProcessId;
             xg.ajax({
                 url: 'http://localhost:31602/api/Approver/SubmitTaskDisapprove',
@@ -437,7 +414,7 @@
                 complete: function () {
                     console.log("complete");
                     xg.loading.hide();
-                    xg.navigate("makers/login");
+                    alert("Disapproved");
                 }
             });
         },
@@ -447,7 +424,8 @@
             var req = xg.serialize();
             req.Action = "Edit";
             req.Email = window.Email;
-            req.TaskId = value;
+            //req.TaskId = value;
+            req.TaskId = window.TaskId;
             req.ProcessId = window.ProcessId;
             xg.ajax({
                 url: 'http://localhost:31602/api/Approver/SubmitTaskEdit',
@@ -461,7 +439,7 @@
                 complete: function () {
                     console.log("complete");
                     xg.loading.hide();
-                    xg.navigate("makers/login");
+                    alert("Sent back to Requester")
                 }
             });
         }

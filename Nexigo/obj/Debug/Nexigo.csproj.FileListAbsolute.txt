@@ -255,3 +255,21 @@ E:\Makers Institute\Nexigo\Purchase-Requisition-Nexigo-.NET-Beres-approve-disapp
 E:\Makers Institute\Nexigo\Purchase-Requisition-Nexigo-.NET-Beres-approve-disapprove\Nexigo\obj\Debug\Nexigo.csproj.CoreCompileInputs.cache
 E:\Makers Institute\Nexigo\Purchase-Requisition-Nexigo-.NET-Beres-approve-disapprove\Nexigo\obj\Debug\Nexigo.dll
 E:\Makers Institute\Nexigo\Purchase-Requisition-Nexigo-.NET-Beres-approve-disapprove\Nexigo\obj\Debug\Nexigo.pdb
+E:\Makers Institute\Projek Akhir\Purchase-Requisition-Nexigo-.NET-Finale-\Nexigo\bin\Nexigo.dll.config
+E:\Makers Institute\Projek Akhir\Purchase-Requisition-Nexigo-.NET-Finale-\Nexigo\bin\Nexigo.dll
+E:\Makers Institute\Projek Akhir\Purchase-Requisition-Nexigo-.NET-Finale-\Nexigo\bin\Nexigo.pdb
+E:\Makers Institute\Projek Akhir\Purchase-Requisition-Nexigo-.NET-Finale-\Nexigo\bin\Microsoft.Owin.dll
+E:\Makers Institute\Projek Akhir\Purchase-Requisition-Nexigo-.NET-Finale-\Nexigo\bin\Microsoft.Owin.FileSystems.dll
+E:\Makers Institute\Projek Akhir\Purchase-Requisition-Nexigo-.NET-Finale-\Nexigo\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\Makers Institute\Projek Akhir\Purchase-Requisition-Nexigo-.NET-Finale-\Nexigo\bin\Microsoft.Owin.StaticFiles.dll
+E:\Makers Institute\Projek Akhir\Purchase-Requisition-Nexigo-.NET-Finale-\Nexigo\bin\Newtonsoft.Json.dll
+E:\Makers Institute\Projek Akhir\Purchase-Requisition-Nexigo-.NET-Finale-\Nexigo\bin\Owin.dll
+E:\Makers Institute\Projek Akhir\Purchase-Requisition-Nexigo-.NET-Finale-\Nexigo\bin\Microsoft.Owin.xml
+E:\Makers Institute\Projek Akhir\Purchase-Requisition-Nexigo-.NET-Finale-\Nexigo\bin\Microsoft.Owin.FileSystems.xml
+E:\Makers Institute\Projek Akhir\Purchase-Requisition-Nexigo-.NET-Finale-\Nexigo\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Makers Institute\Projek Akhir\Purchase-Requisition-Nexigo-.NET-Finale-\Nexigo\bin\Microsoft.Owin.StaticFiles.xml
+E:\Makers Institute\Projek Akhir\Purchase-Requisition-Nexigo-.NET-Finale-\Nexigo\bin\Newtonsoft.Json.xml
+E:\Makers Institute\Projek Akhir\Purchase-Requisition-Nexigo-.NET-Finale-\Nexigo\obj\Debug\Nexigo.csprojResolveAssemblyReference.cache
+E:\Makers Institute\Projek Akhir\Purchase-Requisition-Nexigo-.NET-Finale-\Nexigo\obj\Debug\Nexigo.csproj.CoreCompileInputs.cache
+E:\Makers Institute\Projek Akhir\Purchase-Requisition-Nexigo-.NET-Finale-\Nexigo\obj\Debug\Nexigo.dll
+E:\Makers Institute\Projek Akhir\Purchase-Requisition-Nexigo-.NET-Finale-\Nexigo\obj\Debug\Nexigo.pdb

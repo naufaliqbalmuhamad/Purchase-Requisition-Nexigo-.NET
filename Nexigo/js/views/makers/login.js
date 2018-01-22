@@ -1,5 +1,5 @@
 ﻿nexigo.widget({
-    text: 'Login',
+    text: 'PURCHASE REQUISITION',
     toolbars: [
 
     ],
@@ -7,7 +7,7 @@
         {
             text: 'Login',
             cols: 4,
-            offset: 4,
+            offset: 5,
             clasContent: 'login',
             fields: [
                 { name: 'Username', text: 'Username', required: true },
@@ -16,12 +16,13 @@
         },
         {
             cols: 4,
-            offset: 4,
+            offset: 5,
             fields: [
                 {
                     type: 'button',
                     name: 'Login',
                     text: 'Login',
+                    cssClass: 'xg-btn-primary',
                     stretch: true,
                     action: function () {
                         if (xg.validate()) {
@@ -69,7 +70,7 @@
                         } else {
                             alert("Isi username dan password")
                         }
-                        
+
                     }
                 }
             ]
